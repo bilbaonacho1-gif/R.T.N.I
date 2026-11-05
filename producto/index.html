@@ -250,13 +250,57 @@ nav.scrolled{background:rgba(6,7,8,.72);backdrop-filter:blur(18px) saturate(1.4)
 .tabs button{position:relative;z-index:2;height:42px;padding:0 24px;border-radius:99px;font-size:14px;font-weight:600;color:var(--mut);transition:color .3s}
 .tabs button.on{color:var(--bg)}
 .tabs .pill{position:absolute;z-index:1;top:5px;bottom:5px;border-radius:99px;background:var(--tx);transition:left .45s var(--ease),width .45s var(--ease)}
-.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
-.fstep{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px;min-height:220px;display:flex;flex-direction:column;transition:opacity .35s,transform .45s var(--ease)}
-.fstep.hide{opacity:0;transform:translateY(10px)}
-.fstep .n{font-family:var(--disp);font-size:44px;font-weight:600;color:var(--dim);line-height:1}
-.fstep p{margin-top:auto;font-size:17px;padding-top:30px}
-.fstep.last{border-color:rgba(255,106,61,.35)}
-.fstep.last .n{color:var(--or)}
+.mode-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-top:40px}
+.mode-head .tabs{margin-top:0}
+.mode-sub{font-family:var(--disp);font-size:18px;color:var(--mut);transition:opacity .3s}
+.mgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+.mcard{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:28px;padding:26px 14px 20px;display:flex;flex-direction:column;align-items:center;transition:opacity .35s,transform .45s var(--ease),border-color .4s}
+.mcard:hover{border-color:var(--line2)}
+.mcard.hide{opacity:0;transform:translateY(12px)}
+.mcard .ml{align-self:flex-start;margin:0 0 18px 8px;font-family:var(--disp);font-size:14px;font-weight:700;letter-spacing:.08em}
+.mcard .ml::after{content:"";display:block;width:30px;height:3px;border-radius:3px;background:var(--blue);margin-top:8px}
+.mcard .ml em{font-style:normal;color:var(--dim);margin-right:6px}
+.mcard .watch{font-size:9.2px}
+.watch.short .band{height:5.5em}
+.mode-foot{display:flex;align-items:center;gap:18px;justify-content:center;margin-top:34px;color:var(--mut);font-size:14px;letter-spacing:.04em;text-align:center}
+.mode-foot::before,.mode-foot::after{content:"";flex:0 1 90px;height:1px;background:var(--line2)}
+.ms{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2.4em 2em 2.6em;gap:.55em}
+.ms .m-time{font-family:var(--disp);font-size:1.75em;font-weight:500;line-height:1}
+.ms .m-ics{display:flex;align-items:center;gap:1em;margin:.2em 0}
+.ms .m-ics svg{width:4.8em;height:4.8em}
+.ms .m-sep{width:1px;height:3.8em;background:rgba(255,255,255,.3)}
+.ms .m-ttl{font-family:var(--disp);font-size:2.05em;font-weight:700;line-height:1.08}
+.ms .m-big{font-family:var(--disp);font-size:3.3em;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.ms .m-big.sm{font-size:2.8em}
+.ms .m-kick{font-size:1.2em;letter-spacing:.12em;text-transform:uppercase;color:#dcdce0}
+.ms .m-msg{font-size:1.4em;line-height:1.25;color:#d5d5d8;max-width:15em;min-height:1.25em;transition:color .3s}
+.ms .m-msg.burn{color:var(--or2)}
+.ms .m-sub{font-size:1.35em;border-top:1px solid rgba(255,255,255,.3);padding-top:.45em;width:88%;color:#e6e6ea}
+.ms .m-btns{display:flex;flex-direction:column;gap:.5em;width:90%;margin-top:.25em}
+.ms .m-btn{height:2.15em;border-radius:99px;font-family:var(--disp);font-weight:700;font-size:1.6em;transition:transform .2s,filter .2s}
+.ms .m-btn:hover{filter:brightness(1.12)}
+.ms .m-btn:active{transform:scale(.95)}
+.m-btn.b{background:var(--blue);color:#0b1824}.m-btn.o{background:var(--or);color:#1d0a04}
+.m-btn.bo{border:.13em solid var(--blue);color:var(--blue)}.m-btn.oo{border:.13em solid var(--or);color:var(--or)}
+.m-btn.w{border:.1em solid #fff;color:#fff;font-weight:600}
+.t-blue .m-ics{color:var(--blue)}.t-or .m-ics{color:var(--or)}
+.ms .m-line{width:88%;height:1px;background:rgba(255,255,255,.3)}
+.ms .m-hrow{width:84%;display:flex;justify-content:space-between;font-family:var(--disp);font-size:1.3em;letter-spacing:.08em}
+.ms .m-hrow b{font-weight:500;color:#fff;display:flex;gap:.3em;align-items:center}
+.ms .m-hrow b svg{width:1em;height:1em;color:#ff5b6b;animation:beat 1s infinite}
+.ms .m-clock{font-family:var(--disp);font-size:5em;font-weight:500;line-height:1}
+.ms .m-next{display:flex;align-items:center;gap:1em;text-align:left;color:var(--blue)}
+.ms .m-next svg{width:4em;height:4em}
+.ms .m-next b{display:block;color:#fff;font-family:var(--disp);font-size:2em;line-height:1}
+.ms .m-next small{color:#d5d5d8;font-size:1.3em}
+.ms .m-chips{display:flex;width:84%;justify-content:space-around;color:#fff}
+.ms .m-chips svg{width:2.8em;height:2.8em}
+.ms .m-ess{display:flex;width:90%;justify-content:space-around;color:var(--blue)}
+.ms .m-ess div{display:flex;flex-direction:column;align-items:center;gap:.2em;font-size:1.15em;color:#fff;flex:1}
+.ms .m-ess div+div{border-left:1px solid rgba(255,255,255,.3)}
+.ms .m-ess svg{width:3em;height:3em;color:var(--blue)}
+.ms .m-bar{width:84%;height:1.1em;border-radius:1em;background:rgba(255,255,255,.18);overflow:hidden}
+.ms .m-bar i{display:block;height:100%;width:75%;background:var(--blue);border-radius:inherit}
 
 /* ---------- notificaciones ---------- */
 .notis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:64px}
@@ -321,7 +365,8 @@ dialog .x:hover{background:rgba(255,255,255,.06);color:var(--tx)}
   .models{grid-template-columns:1fr;max-width:460px;margin-inline:auto}
   .calc{grid-template-columns:1fr}
   .calc-r{order:-1}
-  .flow{grid-template-columns:1fr 1fr}
+  .mgrid{grid-template-columns:1fr 1fr}
+  .mcard .watch{font-size:10px}
   .notis{grid-template-columns:1fr 1fr}
 }
 @media (max-width:760px){
@@ -345,8 +390,15 @@ dialog .x:hover{background:rgba(255,255,255,.06);color:var(--tx)}
   .icard h4{font-size:16px}
   .icard span{font-size:12.5px}
   .dash{grid-template-columns:1fr}
-  .flow,.notis{grid-template-columns:1fr}
-  .fstep{min-height:0}
+  .notis{grid-template-columns:1fr}
+  .mgrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-16px;padding:0 16px 10px;scrollbar-width:none}
+  .mgrid::-webkit-scrollbar{display:none}
+  .mcard{flex:0 0 82%;scroll-snap-align:center}
+  .mcard .watch{font-size:9px}
+  .mode-head{flex-direction:column;align-items:flex-start}
+  .mode-foot::before,.mode-foot::after{display:none}
+  .mode-head .tabs{width:100%}
+  .tabs button{flex:1;padding:0 8px;font-size:13px;white-space:nowrap}
   .photo{min-height:440px}
   .photo .cap{left:22px;right:22px;bottom:22px}
   .feat{padding:26px}
@@ -378,6 +430,11 @@ dialog .x:hover{background:rgba(255,255,255,.06);color:var(--tx)}
   <symbol id="i-deseo" viewBox="0 0 48 48"><path d="M9 18h24l3 23H6z"/><path d="M15 18v-3a6 6 0 0 1 12 0v3"/><path d="M40 5l1.6 4.4L46 11l-4.4 1.6L40 17l-1.6-4.4L34 11l4.4-1.6z"/></symbol>
   <symbol id="i-feed" viewBox="0 0 48 48"><rect x="12" y="4" width="24" height="40" rx="4"/><path d="M20 9h8M18 17h12M18 22h8"/><path d="M24 37s-5-3-5-6a2.5 2.5 0 0 1 5-1 2.5 2.5 0 0 1 5 1c0 3-5 6-5 6z"/></symbol>
   <symbol id="i-bio" viewBox="0 0 48 48"><path d="M17 38C7 31 3 25 3 19a7 7 0 0 1 14-3 7 7 0 0 1 14 3c0 6-4 12-14 19z"/><path d="M5 25h6l2-4 3 8 2-4h7M31 23c4 0 5-8 10-8M31 23h10M31 23c4 0 5 8 10 8"/><circle cx="43" cy="15" r="2"/><circle cx="43" cy="23" r="2"/><circle cx="43" cy="31" r="2"/></symbol>
+  <symbol id="i-reloj" viewBox="0 0 48 48"><circle cx="24" cy="24" r="17"/><path d="M24 14v10l7 4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 48 48"><circle cx="24" cy="24" r="17"/><path d="m16 24 6 6 11-12"/></symbol>
+  <symbol id="i-puerta-in" viewBox="0 0 48 48"><path d="M24 8h14v32H24M24 8v8M24 32v8M4 24h22M20 18l6 6-6 6"/><path d="M33 24h.01"/></symbol>
+  <symbol id="i-puerta-out" viewBox="0 0 48 48"><path d="M26 15V8H8v32h18v-7M18 24h24M36 18l6 6-6 6"/></symbol>
+  <symbol id="i-libro-ok" viewBox="0 0 48 48"><path d="M22 12c-5-3-11-3-17-1v26c6-2 12-2 17 1 4-3 9-3 13-3V10c-4 0-9 0-13 2zM22 12v26"/><circle cx="37" cy="33" r="8.5" style="fill:#000"/><path d="m33 33 3 3 5.5-5.5"/></symbol>
   <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6-8 11-8 11z" fill="currentColor" stroke="none"/></symbol>
   <symbol id="i-agua" viewBox="0 0 48 48"><path d="M24 6s-12 13-12 22a12 12 0 0 0 24 0C36 19 24 6 24 6z"/></symbol>
   <symbol id="i-game" viewBox="0 0 48 48"><path d="M14 14h20a9 9 0 0 1 9 9v4a7 7 0 0 1-12 5l-2-2H19l-2 2a7 7 0 0 1-12-5v-4a9 9 0 0 1 9-9z"/><path d="M14 20v8M10 24h8"/><circle cx="32" cy="22" r="1.5"/><circle cx="36" cy="26" r="1.5"/></symbol>
@@ -391,6 +448,7 @@ dialog .x:hover{background:rgba(255,255,255,.06);color:var(--tx)}
     <div class="nav-links">
       <a href="#diseno">Diseño</a>
       <a href="#dia">Un día</a>
+      <a href="#modos">Modos</a>
       <a href="#iconos">Íconos</a>
       <a href="#modelos">Modelos</a>
       <a href="#precio">Precio real</a>
@@ -601,12 +659,17 @@ dialog .x:hover{background:rgba(255,255,255,.06);color:var(--tx)}
 </section>
 
 <!-- ======= modos ======= -->
-<section class="sec" style="padding-top:0">
+<section class="sec" id="modos" style="padding-top:0">
   <div class="wrap">
-    <div class="eyebrow rv">Para cada edad</div>
-    <h2 class="h2 rv d1">Funciona para adultos.<br><span style="color:var(--mut)">Y para adolescentes.</span></h2>
-    <div class="tabs rv d2" id="tabs"><span class="pill"></span><button class="on" data-m="adulto">Adulto</button><button data-m="teen">Adolescente</button></div>
-    <div class="flow" id="flow"></div>
+    <div class="eyebrow rv">Los modos</div>
+    <h2 class="h2 rv d1">Para tu jornada.<br><span style="color:var(--mut)">Para tu estudio. Para vivir.</span></h2>
+    <div class="mode-head rv d2">
+      <div class="tabs" id="tabs"><span class="pill"></span><button class="on" data-m="adulto">Modo adulto</button><button data-m="estudio">Modo estudio</button><button data-m="esencial">Lo esencial</button></div>
+      <div class="mode-sub" id="modeSub"></div>
+    </div>
+    <div class="mgrid" id="mgrid"></div>
+    <div class="mode-foot" id="modeFoot"></div>
+    <p style="text-align:center;color:var(--dim);font-size:13px;margin-top:10px">Tocá los botones de las pantallas.</p>
   </div>
 </section>
 
@@ -701,9 +764,25 @@ const NOTIS = [
   {ic:'feed',c:'o',t:'23:48',h:'Seguís scrolleando',p:'El algoritmo te conoce mejor que tu vieja. Andá a dormir.',a:['5 minutos más'],alert:1},
   {ic:'estudio',c:'b',t:'16:30',h:'¡Estudio completado!',p:'Ya podés volver al celular y doparte un rato.',a:['Vamos']}
 ];
-const FLOW = {
-  adulto:['Registra la entrada y la salida del trabajo.','Avisa cuándo comer, dormir y trabajar para lo esencial: comida, hogar y ropa.','Detecta las horas extra hechas para pagar deseos innecesarios.','Te manda una notificación sarcástica. Sin filtro.'],
-  teen:['Registra la hora de inicio y fin del estudio.','Avisa cuándo comer y dormir.','Al terminar, te “libera” con un comentario sarcástico.','Te recuerda que podés volver al celular por tu dosis de dopamina.']
+const MODES = {
+  adulto:{sub:'Tu jornada termina. Tus deseos, parece que no.', foot:'Humor sobre el consumo · Interfaz conceptual', sc:[
+    {l:'Entrada', time:'09:00', ics:['puerta-in','reloj'], ttl:'Entrada registrada', msg:'Otro día en la matrix. Dale.', sub:'JORNADA INICIADA', btns:[['✓ Registrado','b','Ya sabemos. Siempre llegás.']]},
+    {l:'Salida', time:'17:00', ics:['puerta-out','check'], ttl:'Jornada completa', big:'8 h', msg:'Lo esencial, por hoy.', btns:[['Cerrar jornada','b','Bien. Ahora andá a vivir un rato.']]},
+    {l:'Horas extra', tone:'or', time:'19:15', ics:['extra'], ttl:'¿Horas extra?', msg:'¿Otra hora por unas zapatillas?', sub:'Extra: <span data-extra>2 h 15 min</span>', btns:[['Seguir igual','o','Tus pies, felices. Tu espalda, no.'],['Cerrar jornada','w','Sabia decisión. Rara, pero sabia.']]},
+    {l:'Deseo', tone:'or', time:'19:16', ics:['deseo'], kick:'Deseo detectado', big:'Zapatillas', bigsm:1, msg:'El algoritmo eligió. Vos pagás.', btns:[['Revisar deseo','oo','Revisado: no las necesitás.']]}
+  ]},
+  estudio:{sub:'Versión adolescente · Del estudio al scroll', foot:'El ocio también puede convertirse en consumo · Interfaz conceptual', sc:[
+    {l:'Inicio', time:'14:30', ics:['estudio'], ttl:'Hora de estudiar', msg:'Registrá tu tiempo de estudio.', btns:[['Empezar','b','Dale. El celular puede esperar.']]},
+    {l:'Registro', time:'15:15', ics:['estudio','reloj'], ttl:'En estudio', big:'<span data-timer>00:45:00</span>', msg:'Sesión en curso', btns:[['Finalizar','bo','¿Ya? Recién empezabas.']]},
+    {l:'Fin del estudio', tone:'or', time:'16:00', ics:['libro-ok'], ttl:'Estudio completado', big:'1 h 30 min', bigsm:1, sub:'Tu feed ya estaba preocupado.', btns:[['Continuar','o','Liberado. Por ahora.']]},
+    {l:'Notificación', tone:'or', time:'16:01', ics:['feed'], ttl:'¿Tu tiempo libre?', msg:'Tu dosis de scroll te espera.', btns:[['Abrir celular','o','Sabíamos que ibas a elegir esto.'],['Hacer una pausa','w','¿Una pausa de verdad? Respeto.']]}
+  ]},
+  esencial:{sub:'Comer. Descansar. Sostener la vida cotidiana.', foot:'Interfaz conceptual · Rutinas necesarias', sc:[
+    {l:'Inicio', custom:'home'},
+    {l:'Alimentación', time:'12:00', ics:['comer'], ttl:'Hora de comer', msg:'Tu cuerpo también necesita una pausa.', btns:[['Hecho','b','Bien. Las galletitas no cuentan.']]},
+    {l:'Descanso', time:'23:00', ics:['dormir'], ttl:'Cerrá el día', msg:'Mañana seguimos. Ahora, descansá.', btns:[['Descansar','b','Buenas noches. En serio.'],['Más tarde','w','El scroll de las 2 a.m. no es descanso.']]},
+    {l:'Necesidades', custom:'esencial'}
+  ]}
 };
 const WISHES = [
   {k:'Zapatillas', p:180000, ic:'deseo', m:'¿Seguro te van a hacer más feliz?'},
@@ -820,18 +899,62 @@ function animateNum(el, to) {
 calc(true);
 
 /* ---------- modos ---------- */
-const tabs = $('#tabs'), pill = $('.pill', tabs), flow = $('#flow');
+const tabs = $('#tabs'), pill = $('.pill', tabs), mgrid = $('#mgrid');
+const ic = n => `<svg class="ic"><use href="#i-${n}"/></svg>`;
+function modeScreen(s) {
+  if (s.custom === 'home') return `<div class="ms">
+    <div class="m-hrow"><span>R.T.N.I.</span><b><svg><use href="#i-heart"/></svg><span class="bpm-v">72</span></b></div>
+    <div class="m-clock">10:24</div><div class="m-line"></div><div class="m-kick">Próxima tarea</div>
+    <div class="m-next">${ic('comer')}<div><b>Comer</b><small>12:00 – 12:30</small></div></div>
+    <div class="m-line"></div><div class="m-chips">${ic('dormir')}${ic('trabajo')}${ic('estudio')}</div></div>`;
+  if (s.custom === 'esencial') return `<div class="ms">
+    <div class="m-time">17:00</div><div class="m-ttl">Lo esencial</div>
+    <div class="m-ess"><div>${ic('comer')}Comida</div><div>${ic('hogar')}Hogar</div><div>${ic('ropa')}Ropa</div></div>
+    <div class="m-line"></div><div class="m-msg">Jornada registrada</div><div class="m-big sm">6 h / 8 h</div>
+    <div class="m-bar"><i></i></div><div class="m-msg">Tiempo para sostenerte</div></div>`;
+  return `<div class="ms t-${s.tone || 'blue'}">
+    <div class="m-time">${s.time}</div>
+    <div class="m-ics">${s.ics.map(ic).join('<span class="m-sep"></span>')}</div>
+    ${s.kick ? `<div class="m-kick">${s.kick}</div>` : ''}
+    ${s.ttl ? `<div class="m-ttl">${s.ttl}</div>` : ''}
+    ${s.big ? `<div class="m-big${s.bigsm ? ' sm' : ''}">${s.big}</div>` : ''}
+    ${s.msg ? `<div class="m-msg">${s.msg}</div>` : ''}
+    ${s.sub ? `<div class="m-sub">${s.sub}</div>` : ''}
+    <div class="m-btns">${(s.btns || []).map(([t, k, r]) => `<button class="m-btn ${k}" data-r="${r}">${t}</button>`).join('')}</div></div>`;
+}
+function renderModes(m) {
+  const M = MODES[m];
+  $('#modeSub').textContent = M.sub; $('#modeFoot').textContent = M.foot;
+  mgrid.innerHTML = M.sc.map((s, i) => `<div class="mcard"><div class="ml"><em>0${i + 1} /</em>${s.l.toUpperCase()}</div>
+    <div class="watch grafito short"><div class="band top"></div><div class="case"><div class="crown"></div><div class="side"></div><div class="screen">${modeScreen(s)}</div></div><div class="band bot"></div></div></div>`).join('');
+  mgrid.scrollLeft = 0;
+}
 function setMode(m, btn) {
   $$('button', tabs).forEach(b => b.classList.toggle('on', b === btn));
-  pill.style.left = btn.offsetLeft + 'px'; pill.style.width = btn.offsetWidth + 'px';
-  const render = () => { flow.innerHTML = FLOW[m].map((t, i, a) => `<div class="fstep${i === a.length - 1 ? ' last' : ''}"><span class="n">0${i + 1}</span><p>${t}</p></div>`).join(''); };
-  if (!flow.children.length) return render();
-  $$('.fstep', flow).forEach(f => f.classList.add('hide'));
-  setTimeout(() => { render(); $$('.fstep', flow).forEach(f => f.classList.add('hide')); requestAnimationFrame(() => requestAnimationFrame(() => $$('.fstep', flow).forEach(f => f.classList.remove('hide')))); }, 250);
+  placePill();
+  if (!mgrid.children.length || reduce) return renderModes(m);
+  $$('.mcard', mgrid).forEach(f => f.classList.add('hide'));
+  setTimeout(() => { renderModes(m); const cs = $$('.mcard', mgrid); cs.forEach(f => f.classList.add('hide')); requestAnimationFrame(() => requestAnimationFrame(() => cs.forEach((f, i) => setTimeout(() => f.classList.remove('hide'), i * 70)))); }, 260);
 }
-$$('button', tabs).forEach(b => b.onclick = () => setMode(b.dataset.m, b));
 const placePill = () => { const b = $('button.on', tabs); pill.style.left = b.offsetLeft + 'px'; pill.style.width = b.offsetWidth + 'px'; };
+$$('button', tabs).forEach(b => b.onclick = () => setMode(b.dataset.m, b));
+mgrid.addEventListener('click', e => {
+  const b = e.target.closest('.m-btn'); if (!b) return;
+  const scr = b.closest('.ms'), msg = $('.m-msg', scr) || $('.m-sub', scr);
+  if (!msg) return;
+  if (!msg.dataset.o) msg.dataset.o = msg.innerHTML;
+  msg.textContent = b.dataset.r; msg.classList.add('burn');
+  clearTimeout(msg._t); msg._t = setTimeout(() => { msg.innerHTML = msg.dataset.o; msg.classList.remove('burn'); }, 2600);
+});
 setMode('adulto', $('button', tabs)); addEventListener('resize', placePill); document.fonts && document.fonts.ready.then(placePill);
+// cronómetro de estudio y horas extra en vivo
+let studyS = 45 * 60, extraM = 135;
+const pad = n => String(n).padStart(2, '0');
+setInterval(() => {
+  studyS++; if (studyS % 60 === 0) extraM++;
+  $$('[data-timer]').forEach(e => e.textContent = `${pad(studyS / 3600 | 0)}:${pad(studyS / 60 % 60 | 0)}:${pad(studyS % 60)}`);
+  $$('[data-extra]').forEach(e => e.textContent = `${extraM / 60 | 0} h ${pad(extraM % 60)} min`);
+}, 1000);
 
 /* ---------- reservar ---------- */
 const dlg = $('#dlg'), body = $('#dlgBody');
