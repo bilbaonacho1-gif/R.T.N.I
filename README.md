@@ -1,8 +1,11 @@
 # R.T.N.I — Apocalípticos e Integrados
 
-Presentación web del parcial de Cultura y Medios de Comunicación.
+Sitio web del R.T.N.I. (Reloj de Tareas Necesarias e Innecesarias).
 
-**Navegación:** flechas ← → (o click en los costados de la pantalla), deslizar en el celular. `F` para pantalla completa.
+- `/` — página de producto.
+- `/presentacion` — presentación del parcial de Cultura y Medios de Comunicación.
+
+**Navegación de la presentación:** flechas ← → (o click en los costados de la pantalla), deslizar en el celular. `F` para pantalla completa.
 
 ## Subir a Vercel
 1. Subí esta carpeta a un repo de GitHub.

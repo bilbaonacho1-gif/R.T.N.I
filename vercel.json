@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/producto", "destination": "/", "permanent": false },
+    { "source": "/producto/", "destination": "/", "permanent": false }
+  ]
+}
